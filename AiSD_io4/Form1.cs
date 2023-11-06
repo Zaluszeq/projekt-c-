@@ -9,20 +9,11 @@ namespace AiSD_io4
         {
             InitializeComponent();
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
@@ -33,7 +24,7 @@ namespace AiSD_io4
             for (int i = 0; i < x; i++)
             {
                 Random rnd = new Random();
-                liczby[i] = rnd.Next(1,x);
+                liczby[i] = rnd.Next(1, x);
             }
             return liczby;
         }
@@ -190,7 +181,7 @@ namespace AiSD_io4
                 {
                     lewo++;
                 }
-                while (napis[j] > srodek)
+                while (napis[prawo] > srodek)
                 {
                     prawo--;
                 }
@@ -203,11 +194,11 @@ namespace AiSD_io4
                     prawo--;
                 }
                 if (lewo < y)
-                    SortArray(napis, lewo, y);
-                if (x < rightIndex)
-                    SortArray(napis, x, prawo);
-                return napis;
+                    QuickSort(napis, lewo, y);
+                if (x < prawo)
+                    QuickSort(napis, x, prawo);
             }
+            return napis;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -220,26 +211,83 @@ namespace AiSD_io4
         }
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (checkBox1.Checked)
+            {
+                textBox1.Enabled = false;
+                numericUpDown1.Enabled = true;
+            }
+            else
+            {
+                textBox1.Enabled = true;
+                numericUpDown1.Enabled = false;
+            }
         }
         private void SB_Click_1(object sender, EventArgs e)
         {
-
+            int[] napis;
+            if (textBox1.Enabled == true)
+            {
+                napis = Convert();
+            }
+            else
+            {
+                napis = Generate();
+            }
+            BubbleSort(napis);
         }
 
         private void SS_Click(object sender, EventArgs e)
         {
-
+            int[] napis;
+            if (textBox1.Enabled == true)
+            {
+                napis = Convert();
+            }
+            else
+            {
+                napis = Generate();
+            }
+            SelectSort(napis);
         }
 
         private void SI_Click(object sender, EventArgs e)
         {
-
+            int[] napis;
+            if (textBox1.Enabled == true)
+            {
+                 napis = Convert();
+            }
+            else
+            {
+                napis = Generate();
+            }
+            InsertSort(napis);
         }
-
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int[] napis;
+            if (textBox1.Enabled == true)
+            {
+                napis = Convert();
+            }
+            else
+            {
+                napis = Generate();
+            }
+            MergeSort(napis);
+        }
         private void SQ_Click(object sender, EventArgs e)
         {
-
+            int[] napis;
+            if (textBox1.Enabled == true)
+            {
+                napis = Convert();
+            }
+            else
+            {
+                napis = Generate();
+            }
+            QuickSort(napis);
         }
     }
 }

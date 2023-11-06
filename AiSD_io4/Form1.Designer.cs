@@ -66,6 +66,7 @@
             // 
             // numericUpDown1
             // 
+            numericUpDown1.Enabled = false;
             numericUpDown1.Location = new Point(477, 67);
             numericUpDown1.Margin = new Padding(3, 4, 3, 4);
             numericUpDown1.Maximum = new decimal(new int[] { 200, 0, 0, 0 });
